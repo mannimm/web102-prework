@@ -189,8 +189,22 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
     return item2.pledged - item1.pledged;
 });
 
-// use destructuring and the spread operator to grab the first and second games
+// sort the games by pledged amount in descending order
+const [firstGame, secondGame] = [...sortedGames];
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+const firstGameElement = document.createElement("p");
+firstGameElement.textContent = firstGame.name;
+firstGameContainer.appendChild(firstGameElement);
 
-// do the same for the runner up item
+// do the same for the runner-up item
+const secondGameElement = document.createElement("p");
+secondGameElement.textContent = secondGame.name;
+secondGameContainer.appendChild(secondGameElement);
+
+console.log("Secret Key component 1:", firstGame.name.split(" ")[0]);
+console.log("Secret Key component 2:", secondGame.name.split(" ")[0]);
+
+// use destructuring and the spread operator to grab the first and second games
+
+
